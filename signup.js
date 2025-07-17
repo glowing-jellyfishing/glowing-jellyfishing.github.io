@@ -10,8 +10,16 @@ document.addEventListener('DOMContentLoaded', function() {
         const password = document.getElementById('signup-password').value;
         firebase.auth().createUserWithEmailAndPassword(email, password)
             .then(userCredential => {
-                signupMessage.textContent = 'Account created! Welcome, ' + userCredential.user.email;
-                signupMessage.style.color = '#00b2ff';
+                const user = userCredential.user;
+                user.sendEmailVerification()
+                    .then(() => {
+                        signupMessage.textContent = 'Account created! Verification email sent to ' + user.email + '. Please check your inbox.';
+                        signupMessage.style.color = '#00b2ff';
+                    })
+                    .catch(error => {
+                        signupMessage.textContent = 'Account created, but failed to send verification email: ' + error.message;
+                        signupMessage.style.color = 'orange';
+                    });
             })
             .catch(error => {
                 signupMessage.textContent = error.message;

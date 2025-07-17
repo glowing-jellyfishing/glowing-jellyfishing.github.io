@@ -5,6 +5,47 @@ document.addEventListener('DOMContentLoaded', function() {
     const githubBtn = document.getElementById('github-login');
     const anonBtn = document.getElementById('anon-login');
     const messageDiv = document.getElementById('login-message');
+    const emailLinkForm = document.getElementById('email-link-form');
+    const emailLinkInput = document.getElementById('email-link');
+    // Email Link (passwordless) sign-in
+    if (emailLinkForm) {
+        emailLinkForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = emailLinkInput.value;
+            const actionCodeSettings = {
+                url: window.location.origin + '/login.html',
+                handleCodeInApp: true
+            };
+            firebase.auth().sendSignInLinkToEmail(email, actionCodeSettings)
+                .then(() => {
+                    window.localStorage.setItem('emailForSignIn', email);
+                    messageDiv.textContent = 'Sign-in link sent! Check your email.';
+                    messageDiv.style.color = '#00b2ff';
+                })
+                .catch(error => {
+                    messageDiv.textContent = error.message;
+                    messageDiv.style.color = 'red';
+                });
+        });
+    }
+
+    // Complete sign-in if coming from email link
+    if (firebase.auth().isSignInWithEmailLink(window.location.href)) {
+        let email = window.localStorage.getItem('emailForSignIn');
+        if (!email) {
+            email = window.prompt('Please provide your email for confirmation');
+        }
+        firebase.auth().signInWithEmailLink(email, window.location.href)
+            .then(result => {
+                messageDiv.textContent = 'Signed in as ' + (result.user.email || 'user') + ' (passwordless)';
+                messageDiv.style.color = '#00b2ff';
+                window.localStorage.removeItem('emailForSignIn');
+            })
+            .catch(error => {
+                messageDiv.textContent = error.message;
+                messageDiv.style.color = 'red';
+            });
+    }
 
     // Email/Password login
     loginForm.addEventListener('submit', function(e) {
