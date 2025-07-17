@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Glowing Jellyfishing</title>
+    <title>Sign Up - Glowing Jellyfishing</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .login-container {
+        .signup-container {
             max-width: 400px;
             margin: 3rem auto;
             background: #2c2f33;
@@ -14,24 +14,24 @@
             box-shadow: 0 4px 16px rgba(0,0,0,0.2);
             padding: 2rem;
         }
-        .login-container h2 {
+        .signup-container h2 {
             text-align: center;
             color: #00b2ff;
             margin-bottom: 1.5rem;
         }
-        .login-container form {
+        .signup-container form {
             display: flex;
             flex-direction: column;
             gap: 1rem;
         }
-        .login-container input {
+        .signup-container input {
             padding: 0.7rem;
             border-radius: 6px;
             border: 1px solid #444;
             background: #23272a;
             color: #fff;
         }
-        .login-container button {
+        .signup-container button {
             background: #00b2ff;
             color: #fff;
             border: none;
@@ -41,14 +41,10 @@
             cursor: pointer;
             transition: background 0.2s;
         }
-        .login-container button:hover {
+        .signup-container button:hover {
             background: #0090cc;
         }
-        .provider-btn {
-            margin-top: 0.5rem;
-            width: 100%;
-        }
-        .login-message {
+        .signup-message {
             text-align: center;
             color: #00b2ff;
             margin-top: 1rem;
@@ -61,18 +57,17 @@
         <nav>
             <a href="index.html">Home</a>
             <a href="login.html">Login</a>
+            <a href="signup.html">Sign Up</a>
         </nav>
     </header>
-    <div class="login-container">
-        <h2>Login</h2>
-        <form id="login-form">
-            <input type="email" id="email" placeholder="Email" required>
-            <input type="password" id="password" placeholder="Password" required>
-            <button type="submit">Login with Email</button>
+    <div class="signup-container">
+        <h2>Sign Up</h2>
+        <form id="signup-form">
+            <input type="email" id="signup-email" placeholder="Email" required>
+            <input type="password" id="signup-password" placeholder="Password" required>
+            <button type="submit">Create Account</button>
         </form>
-        <button class="provider-btn" id="github-login">Login with GitHub</button>
-        <button class="provider-btn" id="anon-login">Login Anonymously</button>
-        <div class="login-message" id="login-message"></div>
+        <div class="signup-message" id="signup-message"></div>
     </div>
     <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
@@ -97,6 +92,6 @@
       firebase.appCheck().activate('6Ld2En0rAAAAAOEmHOzI96qCRTYDIPRwLKY28LsF', true); // Set to true for debug token in dev
     }
     </script>
-    <script src="login.js"></script>
+    <script src="signup.js"></script>
 </body>
 </html>
