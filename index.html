@@ -1,1 +1,59 @@
-<iframe src="https://discord.com/widget?id=1394833071949479936&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblox Fan Site</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div style="display: flex; flex-direction: row; min-height: 100vh;">
+        <aside style="background: #23272a; padding: 2rem 1rem; min-width: 370px; display: flex; flex-direction: column; align-items: center;">
+            <iframe src="https://discord.com/widget?id=1394833071949479936&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+        </aside>
+        <main style="flex: 1;">
+            <header>
+                <div class="logo">ROBLOX</div>
+                <nav>
+                    <a href="#home">Home</a>
+                    <a href="#games">Games</a>
+                    <a href="#about">About</a>
+                </nav>
+            </header>
+            <section class="featured" id="games">
+                <h2>Featured Games</h2>
+                <div class="games">
+                    <div class="game">
+                        <img src="https://tr.rbxcdn.com/6b6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e/150/150/Image/Png" alt="Adopt Me">
+                        <div class="game-title">Adopt Me!</div>
+                        <div class="game-desc">Raise pets, build your home, and explore a magical world.</div>
+                        <button class="btn" onclick="showInfo('Adopt Me!')">More Info</button>
+                    </div>
+                    <div class="game">
+                        <img src="https://tr.rbxcdn.com/7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b/150/150/Image/Png" alt="Brookhaven">
+                        <div class="game-title">Brookhaven 🏡RP</div>
+                        <div class="game-desc">Roleplay, build, and live your dream life in Brookhaven.</div>
+                        <button class="btn" onclick="showInfo('Brookhaven 🏡RP')">More Info</button>
+                    </div>
+                    <div class="game">
+                        <img src="https://tr.rbxcdn.com/8c8c8c8c8c8c8c8c8c8c8c8c8c8c8c8c/150/150/Image/Png" alt="Tower of Hell">
+                        <div class="game-title">Tower of Hell</div>
+                        <div class="game-desc">Race to the top in this challenging obby game!</div>
+                        <button class="btn" onclick="showInfo('Tower of Hell')">More Info</button>
+                    </div>
+                </div>
+            </section>
+            <section class="featured" id="about">
+                <h2>About Roblox</h2>
+                <p style="text-align:center; color:#ccc; max-width:700px; margin:0 auto;">
+                    Roblox is an online platform that lets you create, share, and play games made by users from all around the world. Join millions of players and discover endless adventures!
+                </p>
+            </section>
+            <footer>
+                &copy; 2025 Roblox Fan Site. Not affiliated with Roblox Corporation.
+            </footer>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

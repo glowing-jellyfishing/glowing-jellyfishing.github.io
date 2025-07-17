@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #23272a;
+    color: #fff;
+}
+header {
+    background: #202225;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #00b2ff;
+    letter-spacing: 2px;
+}
+nav {
+    margin-top: 1rem;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}
+nav a:hover {
+    color: #00b2ff;
+}
+.featured {
+    max-width: 900px;
+    margin: 2rem auto;
+    background: #2c2f33;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    padding: 2rem;
+}
+.featured h2 {
+    text-align: center;
+    color: #00b2ff;
+    margin-bottom: 1.5rem;
+}
+.games {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+.game {
+    background: #23272a;
+    border-radius: 8px;
+    width: 220px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.2s;
+}
+.game:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 24px rgba(0,178,255,0.2);
+}
+.game img {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+.game-title {
+    font-size: 1.2rem;
+    color: #00b2ff;
+    margin-bottom: 0.5rem;
+}
+.game-desc {
+    font-size: 0.95rem;
+    color: #ccc;
+}
+footer {
+    background: #202225;
+    text-align: center;
+    padding: 1rem 0;
+    color: #aaa;
+    margin-top: 2rem;
+}
+.btn {
+    background: #00b2ff;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background 0.2s;
+}
+.btn:hover {
+    background: #0090cc;
+}
