@@ -12,9 +12,13 @@ document.addEventListener('DOMContentLoaded', function() {
         emailLinkForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const email = emailLinkInput.value;
+            // Use the deployed site URL and ensure it's in Firebase Auth authorized domains
             const actionCodeSettings = {
-                url: window.location.origin + '/login.html',
-                handleCodeInApp: true
+                url: 'https://glowing-jellyfishing.github.io/login.html', // Must match authorized domain
+                handleCodeInApp: true,
+                // Optional: add iOS/Android if you have mobile apps
+                // iOS: { bundleId: 'com.example.ios' },
+                // android: { packageName: 'com.example.android', installApp: true, minimumVersion: '12' }
             };
             firebase.auth().sendSignInLinkToEmail(email, actionCodeSettings)
                 .then(() => {
